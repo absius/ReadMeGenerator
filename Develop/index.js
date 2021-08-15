@@ -9,7 +9,7 @@ const questions = [{type: 'input',name: 'title',message: 'What is your project t
 {type: 'input',name: 'usage',message: 'What usage information would you like to add?'},
 {type: 'input',name: 'guidelines',message: 'What contribution guidelines do you have?'},
 {type: 'input',name: 'testing',message: 'Do you have testing instructions?'},
-{type: 'input',name: 'license',message: 'Please choose a license for your application.'},
+{type: 'list',name: 'license',choices:["MIT","GPL","BSD","APACHE","NONE"],message: 'Please choose a license for your application.'},
 {type: 'input',name: 'username',message: 'What is your github username?'},
 {type: 'input',name: 'email',message: 'What is your email address?'}
 ];
@@ -19,14 +19,14 @@ function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, err => {
         if (err) throw new Error(err);
   
-         console.log('Page created! Check out index.html in this directory to see it!');
+         console.log('Page created! Check out ReadMe.MD in this directory to see it!');
        });
 }
 
 // TODO: Create a function to initialize app
 function init() {
       inquirer.prompt(questions).then(answers => { const pageHTML = generateMarkdown(answers)
-        writeToFile('Dist/index.html', pageHTML);
+        writeToFile('Dist/ReadMe.MD', pageHTML);
 });
 }
 
