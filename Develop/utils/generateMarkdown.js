@@ -37,7 +37,8 @@ function renderLicenseSection(license) {
     return "";
   }else{
  return `## License   
- `
+  This project is covered under the ` + license + ` license. Click the link below for more information.   
+  `
 +  
 renderLicenseBadge(license) +
       renderLicenseLink(license);
@@ -47,7 +48,8 @@ renderLicenseBadge(license) +
 function generateMarkdown(data) {
   return `
 # ${data.title}
-
+`+
+renderLicenseBadge(data.license) +`
 ## Description
 
 ${data.description}
