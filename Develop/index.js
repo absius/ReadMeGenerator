@@ -15,16 +15,19 @@ const questions = [{type: 'input',name: 'title',message: 'What is your project t
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err => {
+        if (err) throw new Error(err);
+  
+         console.log('Page created! Check out index.html in this directory to see it!');
+       });
+}
 
 // TODO: Create a function to initialize app
 function init() {
       inquirer.prompt(questions).then(answers => { const pageHTML = generateMarkdown(answers)
-      fs.writeFile('Dist/index.html', pageHTML, err => {
-      if (err) throw new Error(err);
-
-       console.log('Page created! Check out index.html in this directory to see it!');
-     });});
+        writeToFile('Dist/index.html', pageHTML);
+});
 }
 
 // Function call to initialize app
