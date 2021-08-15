@@ -12,7 +12,7 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `
   <!DOCTYPE html>
   <html lang="en">
 
@@ -20,12 +20,32 @@ function generateMarkdown(data) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Read Me</title>
+    <title>${data.title} Read Me</title>
   </head>
 
   <body>
     <h1>${data.title}</h1>
-    
+    <h2>Description</h2>
+    ${data.description}
+    <h2>Table of Contents</h2>
+    <a href="#install">Installation Instructions</a>
+    <a href="#usage">Usage</a>
+    <a href="#license">License</a>
+    <a href="#contribute">Contributing</a>
+    <a href="#tests">Tests</a>
+    <a href="#questions">Questions</a>
+    <h2 id="install">Installation</h2>
+    ${data.instructions}
+    <h2 id="usage">Usage</h2>
+    ${data.usage}
+    <h2 id="license">License</h2>
+    ${data.license}
+    <h2 id="contribute">Contributing</h2>
+    ${data.guidelines}
+    <h2 id="tests">Tests</h2>
+    ${data.testing}
+    <h2 id="questions">Questions</h2>
+    ${data.email} https://github.com/${data.username}
   </body>
   </html>
 `;
