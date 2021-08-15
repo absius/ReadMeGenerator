@@ -16,22 +16,22 @@ GIVEN a command-line application that accepts user input WHEN I am prompted for 
   
 ## Installation-Instructions
 
-Make sure text is all on one line as line breaks will cause errors in the console.
+Make sure you have all text on one line as line breaks will cause errors
 
 ## Usage
 
-This is for Read Me Generation. It will generate a file with all data you input.
+This is for Read Me generation only
 
 ## License   
   This project is covered under the BSD license. Click the link below for more information.   
   ![BSD License](https://shields.io/badge/license-BSD-green)[ BSD License](https://opensource.org/licenses/BSD-3-Clause)   
 ## Contributing  
 
-Please contribute to improve the usability of the program.  
+Please contribute to add to the usability of the application  
 
 ## Tests  
 
-Run node index.js and answer all question prompts fully.  
+run node index.js in the console and answer all questions completely  
 
 ## Questions  
 
